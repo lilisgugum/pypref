@@ -8,6 +8,6 @@ generalizations (database preferences).
 
 This the Python porting of the rPref package.
 
-Package web site: http://p-roocks.de/rPref/index.php?section=pypref
+Package web site: http://p-roocks.de/rpref/index.php?section=pypref
 
 See pypref-examples.py for examples.
