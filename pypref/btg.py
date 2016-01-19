@@ -50,9 +50,15 @@ def set_paths(dot, viewer):
   viewer_path = viewer
 
 
-# Better-Than-Graph for preferences, containing the Sucessor/Predecessor functions
-# and visualiations of Better-Than-Graphs
 class btg:
+  """
+  Better-Than-Graph for preferences, containing the Sucessor/Predecessor functions
+  and visualiations of Better-Than-Graphs
+  
+  Use pref.btg(df) to create a Better-Than-Graph.
+  
+  """
+
   
   p = None # preference  
   df = None # DataFrame

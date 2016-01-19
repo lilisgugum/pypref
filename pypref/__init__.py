@@ -1,15 +1,13 @@
-"""User interfaces of pypref"""
-
-# -*- coding: utf-8 -*-
-
-
 """
-  The pypref-module
+  The pypref module
+  -----------------
   
   Sykline Computation and Database Preferences in Python
   
   Preference evaluation algorithm is implemented in Cython
   
+  Consider `pypref.low` for constructing preferences and
+  `pypref.pref.psel` for evaluating preferences (obtaining the optima).  
 """
 
 

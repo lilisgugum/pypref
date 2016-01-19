@@ -6,7 +6,7 @@ order. This especially includes the computation of the Pareto
 frontier, also known as (Top-k) Skyline operator, and some 
 generalizations (database preferences).
 
-This the Python porting of the rPref package.
+This the Python port of the rPref package.
 
 Package web site: http://p-roocks.de/rpref/index.php?section=pypref
 

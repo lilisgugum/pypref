@@ -37,7 +37,7 @@ setup(
 
   name = 'pypref',
     
-  version='0.0.1',
+  version = '0.0.1',
     
   description = long_description.split('\n')[0],
  
@@ -50,7 +50,7 @@ setup(
   package_data = { 'pypref': ['mtcars.csv'] },
     
   # Package homepage
-  url = 'https://p-roocks.de/rPref/index.php?section=pypref',
+  url = 'http://p-roocks.de/rPref/index.php?section=pypref',
   
   # Author details
   author = 'Patrick Roocks',

@@ -10,8 +10,12 @@ Example file for the pypref package
 # include package
 import pypref as p
 
-# Simple preference selection
-# ---------------------------
+# include matplotlib
+import matplotlib.pyplot as plt
+
+
+# Skyline plot
+# ------------
 
 # load mtcars data set given in pypref (motor trends data set from R)
 mtcars = p.get_mtcars()
@@ -19,16 +23,27 @@ mtcars = p.get_mtcars()
 # preference for cars with minimal fuel consumption (high mpg value) and high power
 pref = p.high("mpg") * p.high("hp")
 
-# select optimal cars according to this preference
-pref.psel(mtcars)
+def plot_skyline(dataset, pref):
+  # plot all points
+  plt.plot(dataset['mpg'], dataset['hp'], 'bo', fillstyle="none")
+  
+  # select optimal cars according to this preference (skyline)
+  sky = pref.psel(dataset)
+
+  # highlight skyline
+  plt.plot(sky['mpg'], sky['hp'], 'bo')
+  
+  # show plot
+  plt.show()
+  
+plot_skyline(mtcars, pref)
 
 
-# Simple visualization example
-# ----------------------------
 
-# include matplotlib
-import matplotlib.pyplot as plt
+# Level value plot
+# ----------------
 
+# plot all levels and the Pareto frontier of each level
 def plot_levels(dataset, pref):
 
   # get level values for all tuples from the data set
@@ -45,6 +60,7 @@ def plot_levels(dataset, pref):
   
 # show level plot for data set and preference as given above
 plot_levels(mtcars, pref)
+
 
 
 # BTG examples

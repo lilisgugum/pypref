@@ -25,7 +25,14 @@ class PreferenceException(Exception):
   def __str__(self):
     return repr(self.value)
 
-class _pref:
+class pref:
+  """  
+  General main class for preferences.
+  
+  Consider `pypref.low` for constructing preferences and
+  `pypref.pref.psel` for evaluating preferences (obtaining the optima). 
+  """
+  
   def get_str(self):
     return "(abstract preference)"
   def __str__(self):
@@ -201,7 +208,7 @@ class _pref:
 
 # Special empty preference (neutral element for all complex preferences)
 # cannot be evaluated
-class empty(_pref):
+class empty(pref):
   def get_str(self):
     return "(empty)"
 
@@ -209,7 +216,7 @@ class empty(_pref):
 # Base preferences
 # ================
 
-class _basepref(_pref):
+class _basepref(pref):
   """
   Base preferences are used to describe the different goals 
   of a preference query. 
@@ -376,7 +383,12 @@ class true(_basepref):
 # ===================
 
 
-class reverse(_pref):
+class reverse(pref):
+  """
+  `reverse(p)` returns the converse of the preference `p`. 
+  
+  `-p` is a short-cut for `reverse(p)`.
+  """
 
   p = None
 
@@ -405,7 +417,7 @@ class reverse(_pref):
     return [ord(self.operator()), self.p.serialize()]
 
 
-class _complexpref(_pref):
+class _complexpref(pref):
   
   p1 = None
   p2 = None
